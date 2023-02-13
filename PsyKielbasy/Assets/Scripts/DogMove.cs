@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class DogMove : MonoBehaviour
 {
-    [SerializeField] private float radialSpeed;
-    [SerializeField] private Rigidbody rigidbody;
+    private float StartSpeed;
+    [SerializeField] public float radialSpeed;
+    [SerializeField] private Rigidbody _rigidbody;
     bool Grounded;
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
@@ -19,7 +20,15 @@ public class DogMove : MonoBehaviour
     }
     void Start()
     {
+        Grounded = false;
+        StartSpeed = radialSpeed;
         SceneManager.sceneLoaded += TPToStartingPoint;
+        GameManager.switchDirection += Reverse;
+        GameManager.Restart += _TpToStartingPoint;
+    }
+    private void Reverse()
+    {
+        radialSpeed *= -1;
     }
 
     // Update is called once per frame
@@ -27,7 +36,7 @@ public class DogMove : MonoBehaviour
     {
         if (Grounded)
         {
-            rigidbody.AddTorque(new Vector3( 0, 0, -radialSpeed));
+            _rigidbody.AddTorque(new Vector3( 0, 0, -radialSpeed));
         }
         
     }
@@ -38,13 +47,27 @@ public class DogMove : MonoBehaviour
         if ( point != null )
         {
             this.transform.position = point.transform.position;
-            //For Debug Porpuses
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
     }
     public void OnDestroy()
     {
         SceneManager.sceneLoaded -= TPToStartingPoint;
-
+        GameManager.switchDirection -= Reverse;
+        GameManager.Restart -= _TpToStartingPoint;
+    }
+    private void _TpToStartingPoint()
+    {
+        Grounded = false;
+        radialSpeed = StartSpeed;
+        var point = GameObject.Find("StartPoint");
+        if (point != null)
+        {
+            this.transform.position = point.transform.position;
+            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        }
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
+        _rigidbody.Sleep();
     }
 }

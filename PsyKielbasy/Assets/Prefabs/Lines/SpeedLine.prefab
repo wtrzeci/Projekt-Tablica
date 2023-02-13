@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4560925495274348761}
   - component: {fileID: -2274486964068174803}
   - component: {fileID: 6117824449955716836}
+  - component: {fileID: 7555438876262850178}
   m_Layer: 0
-  m_Name: LevelLine
+  m_Name: SpeedLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +55,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 856c655bcd658704e899cc9fe9d18cfb, type: 2}
+  - {fileID: 2100000, guid: 3541e1089376f0a45a4ca8d1d42e3053, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,9 +99,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.040607214, g: 1, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -116,7 +117,7 @@ LineRenderer:
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 65535
+      atime2: 0
       atime3: 0
       atime4: 0
       atime5: 0
@@ -163,3 +164,16 @@ MonoBehaviour:
   points: []
   meshCollider: {fileID: -2274486964068174803}
   DistanceBetweenPoints: 0.1
+--- !u!114 &7555438876262850178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532498594288199182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cdea7ea64d95534bbaad8d116d6f347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplayer: 4

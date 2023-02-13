@@ -348,17 +348,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 13125956, guid: af51fcb5f5d17ee4c857c5e7200d2b03, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.148
+    - target: {fileID: 919606512, guid: af51fcb5f5d17ee4c857c5e7200d2b03, type: 3}
+      propertyPath: radialSpeed
+      value: 20.43
       objectReference: {fileID: 0}
     - target: {fileID: 8621437874662192552, guid: af51fcb5f5d17ee4c857c5e7200d2b03, type: 3}
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
     - target: {fileID: 8621437874662192555, guid: af51fcb5f5d17ee4c857c5e7200d2b03, type: 3}
-      propertyPath: m_Constraints
-      value: 126
+      propertyPath: m_Drag
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621437874662192555, guid: af51fcb5f5d17ee4c857c5e7200d2b03, type: 3}
+      propertyPath: m_Mass
+      value: 72.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621437874662192555, guid: af51fcb5f5d17ee4c857c5e7200d2b03, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 8621437874662192559, guid: af51fcb5f5d17ee4c857c5e7200d2b03, type: 3}
       propertyPath: m_RootOrder
@@ -826,10 +834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
